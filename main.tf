@@ -5,3 +5,14 @@ resource "aws_ebs_volume" "ebsvolume" {
   encrypted         = true
   final_snapshot    = true
 }
+
+
+lifecycle {
+
+  ignore_changes = [
+    # Ignore changes to tags, e.g. because a management agent
+
+    # updates these based on some ruleset managed elsewhere.
+    tags,
+  ]
+}
