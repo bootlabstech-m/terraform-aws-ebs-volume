@@ -28,3 +28,7 @@ variable "role_arn" {
   description = " The ARN of the IAM role"
   type = string
 }
+variable "name"{
+  type = string
+  description = "test_name"
+}
