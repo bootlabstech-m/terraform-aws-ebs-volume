@@ -1,34 +1,52 @@
 variable "availability_zone" {
-  description = "value"
+  description = "availability_zone"
   type        = string
 }
 variable "size" {
-  description = "value"
+  description = "size"
   type        = string
 }
 variable "type" {
-  description = "value"
+  description = "type"
   type        = string
 }
-variable "encrypted" {
-  description = "value"
+variable "iops" {
+  description = "IOPS of the volume"
+  type        = string
+}
+variable "throughput" {
+  description = "throughput of the volume"
+  type        = string
+}
+
+variable "multi_attach_enabled" {
+  description = "multi_attach_enable"
+  type        = bool
+  default     = true
+}
+variable "snapshot_id" {
+  description = "snapshot_id of the volume"
+  type        = string
+}
+variable "kms_key_id" {
+  description = "kms_key_id of the volume"
+  type        = string
+}
+variable "volume_encryption" {
+  description = "volume_encryption"
   type        = bool
   default     = true
 }
 variable "final_snapshot" {
-  description = "value"
+  description = "final_snapshot"
   type        = string
   default     = true
 }
 variable "region" {
-  description = "value"
+  description = "region"
   type        = string
 }
 variable "role_arn" {
   description = " The ARN of the IAM role"
   type = string
-}
-variable "name"{
-  type = string
-  description = "test_name"
 }
