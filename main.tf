@@ -6,19 +6,7 @@ resource "aws_ebs_volume" "ebsvolume" {
   throughput            = var.type == "gp3"  ? var.throughput : null
   multi_attach_enabled  = var.type == "io1" || var.type == "io2" ? var.multi_attach_enabled : null
   snapshot_id           = var.snapshot_id
-   
   encrypted             = var.volume_encryption
   kms_key_id            = var.kms_key_id
   final_snapshot        = var.final_snapshot
 }
-
-
-# lifecycle {
-
-#   ignore_changes = [
-#     # Ignore changes to tags, e.g. because a management agent
-
-#     # updates these based on some ruleset managed elsewhere.
-#     tags,
-#   ]
-# }
